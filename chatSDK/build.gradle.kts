@@ -56,6 +56,10 @@ kotlin {
 
             // For Adaptive FilePicker
             implementation(libs.calf.file.picker)
+
+            implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
+            implementation(compose.ui)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

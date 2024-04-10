@@ -1,4 +1,4 @@
-package remote.dto
+package data.remote.dto
 
 import io.ktor.util.encodeBase64
 import kotlinx.serialization.SerialName

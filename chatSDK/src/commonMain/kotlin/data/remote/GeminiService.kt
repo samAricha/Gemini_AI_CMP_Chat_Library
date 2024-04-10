@@ -1,7 +1,7 @@
-package remote
+package data.remote
 
-import remote.dto.Request
-import remote.dto.Response
+import data.remote.dto.Request
+import data.remote.dto.Response
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation

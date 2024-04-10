@@ -1,6 +1,6 @@
-package remote.repository
+package data.remote.repository
 
-import remote.GeminiService
+import data.remote.GeminiService
 import domain.model.ChatStatusModel
 import domain.repository.GeminiRepository
 import io.ktor.utils.io.errors.IOException

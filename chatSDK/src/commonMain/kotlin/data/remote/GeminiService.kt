@@ -17,6 +17,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.teka.gemini_ai_cmp_chat_library.BuildKonfig
+import java.io.File
 
 const val TIMEOUT = 30000L
 
@@ -45,7 +46,9 @@ class GeminiService {
     }
 
     private val baseUrl = "https://generativelanguage.googleapis.com/v1/models"
-    private var apiKey: String = BuildKonfig.API_KEY
+    private var apiKey: String = "BuildKonfig.API_KEY"
+
+
 
     fun getApiKey(): String {
         return apiKey

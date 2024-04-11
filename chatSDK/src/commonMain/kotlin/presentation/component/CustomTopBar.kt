@@ -40,7 +40,12 @@ import presentation.theme.SecondaryLightColor
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalResourceApi::class)
 @Composable
-fun CustomAppBar(onActionClick: () -> Unit = {}, modifier: Modifier = Modifier) {
+fun CustomAppBar(
+    onActionClick: () -> Unit = {},
+    modifier: Modifier = Modifier,
+    mainTitle: String = "OrganiksAiAssistant",
+    subTitle: String = "Organiks + Gemini"
+) {
     Row(
         modifier = modifier
             .background(Cream2)
@@ -56,7 +61,7 @@ fun CustomAppBar(onActionClick: () -> Unit = {}, modifier: Modifier = Modifier) 
             title = {
                 Column {
                     Text(
-                        text = "OrganiksAiAssistant",
+                        text = mainTitle,
                         style = TextStyle(
                             fontSize = 20.sp,
                             fontWeight = FontWeight.ExtraBold,
@@ -64,7 +69,7 @@ fun CustomAppBar(onActionClick: () -> Unit = {}, modifier: Modifier = Modifier) 
                         ),
                     )
                     Text(
-                        text = "Organiks + Gemini",
+                        text = subTitle,
                         style = TextStyle(
                             fontSize = 13.sp,
                             fontWeight = FontWeight.Normal,

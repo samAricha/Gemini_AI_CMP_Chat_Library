@@ -10,7 +10,7 @@ import domain.model.Sender
 import kotlinx.coroutines.launch
 import data.remote.repository.GeminiRepositoryImpl
 
-class ChatViewModel : ViewModel() {
+class ChatViewModel(geminiKey:String="") : ViewModel() {
 
     private val geminiRepository: GeminiRepository = GeminiRepositoryImpl()
 
@@ -19,6 +19,7 @@ class ChatViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
+            geminiRepository.setApiKey(key = geminiKey)
             _uiState.value = _uiState.value.copy(apiKey = geminiRepository.getApiKey())
         }
     }

@@ -37,7 +37,11 @@ import presentation.theme.LightGreen
 import presentation.theme.LightRed
 
 @Composable
-fun ChatScreen(viewModel: ChatViewModel = ChatViewModel()) {
+fun ChatScreen(
+    mainTitle: String = "Gemini AI Chat",
+    subTitle: String = "by Teka"
+    ) {
+    val viewModel: ChatViewModel = ChatViewModel(geminiKey = "AIzaSyDlDRTdtwk8L-9zLSaWtLF81W3TA-cdPq4")
     val chatUiState = viewModel.uiState
     val focusManager = LocalFocusManager.current
     val coroutineScope = rememberCoroutineScope()
@@ -48,7 +52,11 @@ fun ChatScreen(viewModel: ChatViewModel = ChatViewModel()) {
 
     Scaffold(
         topBar = {
-            CustomAppBar(onActionClick = { showDialog.value = true })
+            CustomAppBar(
+                onActionClick = { showDialog.value = true },
+                mainTitle = mainTitle,
+                subTitle = subTitle
+            )
         },
         bottomBar = {
             CustomBottomSearchBar(

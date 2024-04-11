@@ -39,9 +39,10 @@ import presentation.theme.LightRed
 @Composable
 fun ChatScreen(
     mainTitle: String = "Gemini AI Chat",
-    subTitle: String = "by Teka"
+    subTitle: String = "by Teka",
+    geminiKey: String = ""
     ) {
-    val viewModel: ChatViewModel = ChatViewModel(geminiKey = "AIzaSyDlDRTdtwk8L-9zLSaWtLF81W3TA-cdPq4")
+    val viewModel: ChatViewModel = ChatViewModel(geminiKey = geminiKey)
     val chatUiState = viewModel.uiState
     val focusManager = LocalFocusManager.current
     val coroutineScope = rememberCoroutineScope()

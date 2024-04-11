@@ -1,9 +1,12 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.buildKonfig) apply true
+
 }
 
 kotlin {
@@ -83,5 +86,23 @@ compose.desktop {
             packageName = "org.teka.gemini_ai_cmp_chat_library"
             packageVersion = "1.0.0"
         }
+    }
+}
+
+buildkonfig {
+    packageName = "org.teka.gemini_ai_cmp_chat_library"
+
+    defaultConfigs {
+        val apiKey: String = gradleLocalProperties(rootDir).getProperty("API_KEY")
+        val sonatypeUsername: String = gradleLocalProperties(rootDir).getProperty("SONATYPE_USERNAME")
+        val sonatypePassword: String = gradleLocalProperties(rootDir).getProperty("SONATYPE_PASSWORD")
+
+        require(apiKey.isNotEmpty()) {
+            "Register your api key from developer and place it in local.properties as `API_KEY`"
+        }
+
+        buildConfigField(com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING, "API_KEY", apiKey)
+        buildConfigField(com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING, "SONATYPE_USERNAME", sonatypeUsername)
+        buildConfigField(com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING, "SONATYPE_PASSWORD", sonatypePassword)
     }
 }

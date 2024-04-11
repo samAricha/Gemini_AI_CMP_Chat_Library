@@ -23,14 +23,15 @@ class GeminiRepositoryImpl : GeminiRepository {
                 ChatStatusModel.Error(it.message)
             } ?: response.getText()?.let {
                 ChatStatusModel.Success(it)
-            } ?: ChatStatusModel.Error("An error occurred, please retry.")
+            } ?: ChatStatusModel.Error("A connection error occurred, please retry.")
 
             status
 
         } catch (e: IOException) {
             ChatStatusModel.Error("Unable to connect to the server. Please check your internet connection and try again.")
         } catch (e: Exception) {
-            ChatStatusModel.Error("An error occurred, please retry.")
+            println("Gemini Error ${e.message}")
+            ChatStatusModel.Error("An error has occurred, please retry.")
         }
     }
 

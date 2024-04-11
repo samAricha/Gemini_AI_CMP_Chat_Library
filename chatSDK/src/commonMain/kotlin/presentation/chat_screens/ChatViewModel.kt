@@ -66,4 +66,5 @@ class ChatViewModel : ViewModel() {
             status = if (isLoading) ChatStatusModel.Loading else ChatStatusModel.Idle
         )
     }
+
 }

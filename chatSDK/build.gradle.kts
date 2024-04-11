@@ -13,6 +13,9 @@ plugins {
     alias(libs.plugins.dokka)
     id("signing")
     alias(libs.plugins.buildKonfig) apply true
+
+    kotlin("plugin.serialization") version "1.9.21"
+
 }
 
 kotlin {

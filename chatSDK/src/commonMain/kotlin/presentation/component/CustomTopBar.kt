@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -44,7 +45,9 @@ fun CustomAppBar(
     onActionClick: () -> Unit = {},
     modifier: Modifier = Modifier,
     mainTitle: String = "OrganiksAiAssistant",
-    subTitle: String = "Organiks + Gemini"
+    subTitle: String = "Organiks + Gemini",
+    img: Painter? = null
+
 ) {
     Row(
         modifier = modifier
@@ -79,19 +82,21 @@ fun CustomAppBar(
                 }
             },
             navigationIcon = {
-//                Row {
-//                    Spacer(modifier = Modifier.width(10.dp))
-//                    Image(
-//                        painter = painterResource("perfect100.png"),
-//                        contentDescription = "Organiks Mascot",
-//                        contentScale = ContentScale.Crop,
-//                        modifier = Modifier
-//                            .size(45.dp)
-//                            .clip(CircleShape)
-//                            .clickable {}
-//                    )
-//                    Spacer(modifier = Modifier.width(5.dp))
-//                }
+                Row {
+                    Spacer(modifier = Modifier.width(10.dp))
+                    if (img != null) {
+                        Image(
+                            painter = img,
+                            contentDescription = "Organization Mascot",
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier
+                                .size(45.dp)
+                                .clip(CircleShape)
+                                .clickable {}
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(5.dp))
+                }
             },
 //            actions = {
 //                IconButton(

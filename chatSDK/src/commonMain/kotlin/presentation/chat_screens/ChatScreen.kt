@@ -18,6 +18,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
@@ -40,7 +41,8 @@ import presentation.theme.LightRed
 fun ChatScreen(
     mainTitle: String = "Gemini AI Chat",
     subTitle: String = "by Teka",
-    geminiKey: String = ""
+    geminiKey: String = "",
+    brandingImg: Painter? = null
     ) {
     val viewModel: ChatViewModel = ChatViewModel(geminiKey = geminiKey)
     val chatUiState = viewModel.uiState
@@ -56,7 +58,8 @@ fun ChatScreen(
             CustomAppBar(
                 onActionClick = { showDialog.value = true },
                 mainTitle = mainTitle,
-                subTitle = subTitle
+                subTitle = subTitle,
+                img = brandingImg
             )
         },
         bottomBar = {

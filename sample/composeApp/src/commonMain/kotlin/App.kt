@@ -14,6 +14,7 @@ import presentation.chat_screens.ChatScreen
 @Preview
 fun App() {
     MaterialTheme {
+
         ChatScreen(
             geminiKey = BuildKonfig.API_KEY,
             mainTitle = "OrganiksKMP",

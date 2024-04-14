@@ -34,8 +34,10 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation("io.github.samaricha:chatSDK:0.0.1")
 
-            implementation(project(":chatSDK"))
+
+//            implementation(project(":chatSDK"))
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

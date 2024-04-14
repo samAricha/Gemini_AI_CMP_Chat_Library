@@ -47,7 +47,7 @@ Initialize the Gemini chat Screen in your application:
 
 
 ## Screenshots
-<img src="graphics/gemini-chat-sdk.jpeg.jpeg"  width="250"/>  
+<img src="art/gemini-chat-sdk.jpeg.jpeg"  width="250"/>  
 
 
 ## Built with

@@ -8,7 +8,7 @@ integrate Gemini chat functionality into their Android and desktop applications.
 You can either use [IntelliJ IDEA](https://www.jetbrains.com/idea/) or [Android Studio](https://developer.android.com/studio/).
 
 
-> For Gemini AI Assistant.
+> For Gemini AI.
 #### Gemini Api Key
 You can get your key here [Google AI Studio](https://makersuite.google.com/app/prompts/new_freeform) and pass it to the pass screen function.
 
